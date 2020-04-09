@@ -1,36 +1,43 @@
-public class Employee {
-  // TODO fix class declaration and declare variables here
+public class Employee implements Payable {
+  public String employeeId;
+  public String name;
+  public double averageMonthlySalary;
 
   public Employee(String employeeId, String name) {
-    // TODO fill in code here
+    this.employeeId = employeeId;
+    this.name = name;
+  }
+
+  public Employee() {
   }
 
   public String getEmployeeId() {
-    // TODO fill in code here and replace the return statement
-    return "";
+    return employeeId;
   }
 
   public void setEmployeeId(String employeeId) {
-    // TODO fill in code here
+    this.employeeId = employeeId;
   }
 
   public String getName() {
-    // TODO fill in code here and replace the return statement
-    return "";
+    return name;
   }
 
   public void setName(String name) {
-    // TODO fill in code here
+    this.name = name;
   }
 
   public double getAverageMonthlySalary() {
-    // TODO fill in code here and replace the return statement
-    return 0;
+    return averageMonthlySalary;
+  }
+
+  public int calculatePay() {
+    return (int) averageMonthlySalary;
   }
 
   @Override
   public String toString() {
-    // TODO fill in code here and replace the return statement, be sure to format double value
-    return "";
+    String format = "%.2f";
+    return "The employee's name is " + name + ". The ID is " + employeeId + ". The average monthly salary is " + String.format(format, averageMonthlySalary) + ".";
   }
 }
